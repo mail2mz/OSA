@@ -1,4 +1,5 @@
 import React from "react";
+import Form from 'react-bootstrap/Form'
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
@@ -6,17 +7,26 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
+import axios from 'axios';
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 
 import CreateStudent from "./components/create-student.component";
 import EditStudent from "./components/edit-student.component";
 import StudentList from "./components/student-list.component";
-import ButtonSingle from "./components/button-single.component";
-import ButtonStart from "./components/button-start.component";
-import ButtonStop from "./components/button-stop.component";
+
+import DialogForm from "./DialogForm";
+import PlotOSA from "./PlotOSA";
+
+
+var startButton = 'N';
+var stopButton = 'N';
+var singleButton = 'N';
+
 
 function App() {
+
   return (<Router>
     <div className="App">
       <header className="App-header">
@@ -48,44 +58,22 @@ function App() {
                 </Link>
               </Nav>
 
-
-              <Nav>
-                <Link to={"/button-start"} className="nav-link">
-                  Button Start
-                </Link>
-              </Nav>
-
-              <Nav>
-			      <Link to={"/button-stop"} className="nav-link">
-			       Button Stop
-			      </Link>
-              </Nav>
-
-              <Nav>
-			      <Link to={"/button-single"} className="nav-link">
-			        Button Single
-			       </Link>
-              </Nav>
          </Nav>
 
           </Container>
         </Navbar>
       </header>
-
       <Container>
-        <Row>
-          <Col md={12}>
-            <div className="wrapper">
-              <Switch>
-                <Route exact path='/' component={CreateStudent} />
-                <Route path="/create-student" component={CreateStudent} />
-                <Route path="/edit-student/:id" component={EditStudent} />
-                <Route path="/student-list" component={StudentList} />
-              </Switch>
-            </div>
-          </Col>
-        </Row>
-      </Container>
+
+     <div>
+      <PlotOSA />
+      </div>
+	  </Container>
+
+       <div>
+	                <DialogForm />
+       </div>
+
 
     </div>
   </Router>);
