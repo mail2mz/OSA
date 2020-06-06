@@ -32,7 +32,7 @@ function App() {
       <header className="App-header">
         <Navbar bg="dark" variant="dark">
           <Container>
-
+{/*
             <Navbar.Brand>
               <Link to={"/create-student"} className="nav-link">
                 React MERN Stack App
@@ -46,11 +46,11 @@ function App() {
                 </Link>
               </Nav>
 
-              {/* <Nav>
+               <Nav>
                 <Link to={"/edit-student/:id"} className="nav-link">
                   Edit Student
                 </Link>
-              </Nav> */}
+              </Nav>
 
               <Nav>
                 <Link to={"/student-list"} className="nav-link">
@@ -60,7 +60,8 @@ function App() {
 
          </Nav>
 
-          </Container>
+     */}
+     </Container>
         </Navbar>
       </header>
       <Container>
